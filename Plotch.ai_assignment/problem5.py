@@ -7,8 +7,15 @@
 
 
 def group_by_owners(files):
-    ans={}
-    for el in files:
-        ans
+    ans = {}
+    for file, owner in files.items():
+        if owner in ans:
+            ans[owner].append(file)
+        else:
+            ans[owner] = [file]
+    return ans
+
 
 files = {'Input.txt': 'Randy', 'Code.py': 'Stan', 'Output.txt': 'Randy'} 
+output = group_by_owners(files)
+print(output)
