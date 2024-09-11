@@ -6,9 +6,13 @@
 def highest_count(items):
     highest_value_count=-1
     for item in items:
-        [city,count]=item.items()
-        if item[city]>highest_value_count:
-            highest_value_count=item[city]
+        city=""
+        count=0
+        for el in item:
+            city=el
+            count=item[el]
+        if count>highest_value_count:
+            highest_value_count=count
     return highest_value_count        
 
 items = [{'Delhi': 3}, {'Mumbai': 9}, {'Goa': 7}, {'Gujrat': 4}]
